@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+{% block content %}
+<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click" style="background-color: #4356ff">
+    <div class="uk-navbar-left">
+      <a class="uk-navbar-item uk-logo" href="#" style="color: white">LeadSlider</a>
+      <ul class="uk-navbar-nav">
+        <li><a href="/" style="color: rgb(209, 209, 209)">Generator</a></li>
+        <li class="uk-active"><a href="/linkedin" style="color: white">Linkedin Leads</a></li>
+        <li><a href="/amazon" style="color: rgb(209, 209, 209)">Amazon Leads</a></li>
+      </ul>
+    </div>
+</nav>
+<div class="uk-container">
+    <h3>Leads</h3>
+    <table class="uk-table">
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>About</th>
+          <th>LinkedIN Profile</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for lead in leads %}
+      <tr>
+        <td>{{ lead.name }}</td>
+        <td>{{ lead.about }}</td>
+        <td><a href="https://www.linkedin.com/in/b59393a5">View Profile</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% endblock %}

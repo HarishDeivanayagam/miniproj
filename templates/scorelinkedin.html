@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+{% block content %}
+<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click" style="background-color: #4356ff">
+    <div class="uk-navbar-left">
+      <a class="uk-navbar-item uk-logo" href="#" style="color: white">LeadSlider</a>
+      <ul class="uk-navbar-nav">
+        <li><a href="/" style="color: rgb(209, 209, 209)">Generator</a></li>
+        <li class="uk-active"><a href="/linkedin" style="color: white">Linkedin Leads</a></li>
+        <li><a href="/amazon" style="color: rgb(209, 209, 209)">Amazon Leads</a></li>
+      </ul>
+    </div>
+</nav>
+<div class="uk-container">
+  {% if data == False %}
+    <h3>What your looking for is not a quality lead.</h3>
+    <a href="/">Search again</a>
+  {% else %}
+    <h3>Lead Added.</h3>
+    <a href="/linkedin">View Leads</a>
+  {% endif %}
+  </div>
+{% endblock %}

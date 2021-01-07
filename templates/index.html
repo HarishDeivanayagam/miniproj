@@ -1,0 +1,54 @@
+{% extends "template.html" %} {% block content %}
+<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click" style="background-color: #4356ff">
+  <div class="uk-navbar-left">
+    <a class="uk-navbar-item uk-logo" href="#" style="color: white">LeadSlider</a>
+    <ul class="uk-navbar-nav">
+      <li class="uk-active"><a href="/" style="color: white">Generator</a></li>
+      <li><a href="/linkedin" style="color: rgb(209, 209, 209)">Linkedin Leads</a></li>
+      <li><a href="/amazon" style="color: rgb(209, 209, 209)">Amazon Leads</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="uk-container">
+  <br /><br />
+  <form name="generate-form" method="POST" action="/">
+    <fieldset class="uk-fieldset">
+      <legend class="uk-legend">Generate Leads</legend>
+        <div class="uk-margin">
+            <select class="uk-select" name="source" id="source" onchange="contextCheck()">
+                <option value="select">Select Source</option>
+                <option value="linkedin">Linkedin - B2B Sales Outreach</option>
+                <option value="amazon">Amazon - B2C Customer Report / Secondary Market Research</option>
+            </select>
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Enter Task Name" name="task">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="url" placeholder="Enter URL" name="url">
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" name="search" checked value="shallow"> Shallow Search</label>
+            <label><input class="uk-radio" type="radio" name="search" value="deep"> Deep Search (Takes longer time)</label>
+        </div>
+        <div id="linkedin-hidden">
+          <div class="uk-margin">
+            <textarea id="context-area" name="context" class="uk-textarea" rows="5" placeholder="Enter Context here..."></textarea>
+          </div>
+        </div>
+        <button class="uk-button uk-button-primary uk-width-1-1">Generate</button>
+    </fieldset>
+  </form>
+</div>
+<script>
+  function contextCheck() {
+    let source = document.getElementById("source");
+    if(source.value === "linkedin") {
+      document.getElementById("linkedin-hidden").style.display = "block";
+    } else {
+      document.getElementById("linkedin-hidden").style.display = "none";
+    }
+  }
+  contextCheck();
+</script>
+{% endblock %}
