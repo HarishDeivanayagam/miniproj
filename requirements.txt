@@ -15,7 +15,7 @@ MarkupSafe==1.1.1
 requests==2.25.0
 selenium==3.141.0
 soupsieve==2.1
-urllib3==1.26.2
+urllib3==1.26.4
 vaderSentiment==3.3.2
 webdriver-manager==3.2.2
 Werkzeug==1.0.1
