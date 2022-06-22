@@ -25,7 +25,7 @@ linkedin-scraper==2.7.1
 lxml==4.6.2
 Markdown==3.3.3
 MarkupSafe==1.1.1
-numpy==1.18.5
+numpy==1.22.0
 opt-einsum==3.3.0
 pandas==0.23.4
 protobuf==3.14.0
